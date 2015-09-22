@@ -21,14 +21,13 @@ gulp.task 'make', ->
     '!./src/scss/'
     '!./src/scss/**/*'
   ]
-  .pipe tar 'whitegry_plus.tar'
+  .pipe tar 'col-whitegry_plus.tar'
   .pipe do gzip
-  .pipe rename './whigegry_plus.rsp'
   .pipe gulp.dest '.'
   console.log 'Complete.'
 
 gulp.task 'clean', ->
-  rimraf './whitegry_plus.rsp'
+  rimraf './whitegry_plus.tar.gz'
 
 
 gulp.task 'default', ['scss']

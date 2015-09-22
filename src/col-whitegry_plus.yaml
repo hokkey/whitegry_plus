@@ -1,0 +1,9 @@
+name: whitegry_plus
+author: Yuma Hori
+version: 1.0
+desc: A more comfortable theme based on default whitegray
+info_url: https://github.com/hokkey
+config_url: /plugins/col-whitegry_plus/pages/setup.php
+default_priority: 999
+category: User interface
+userpreferencegroup: colourtheme
