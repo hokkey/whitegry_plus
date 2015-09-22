@@ -8,25 +8,18 @@ rename = require 'gulp-rename'
 rimraf = require 'rimraf'
 
 gulp.task 'scss', ->
-  gulp.src './css/src/*.scss'
+  gulp.src './src/scss/*.scss'
   .pipe sass(
     outputStyle: 'compressed'
   ).on('error', sass.logError)
-  .pipe gulp.dest './css'
+  .pipe gulp.dest './src/css'
 
 gulp.task 'make', ->
   console.log 'Creating rsp package...'
   gulp.src [
-    './**/*'
-    '!./node_modules/'
-    '!./node_modules/**/*'
-    '!./.gitignore'
-    '!./*.coffee'
-    '!./*.json'
-    '!./css/src/'
-    '!./css/src/**/*'
-    '!./*.rsp'
-    '!./*.gz'
+    './src/**/*'
+    '!./src/scss/'
+    '!./src/scss/**/*'
   ]
   .pipe tar 'whitegry_plus.tar'
   .pipe do gzip
