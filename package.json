@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "coffee-script": "^1.10.0",
     "gulp": "^3.9.0",
-    "node-sass": "^3.3.3"
+    "gulp-sass": "^2.0.4"
   }
 }
