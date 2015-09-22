@@ -37,37 +37,83 @@
   top: 4px;
 }
 
-#HeaderButtons a:link,
-#UICenter input[type=submit],
-#UICenter input[type=button],
-#UICenter button,
-.ResponsiveButton {
-  // override button design
-  box-shadow: none;
-  border-radius: 8px;
-  background: #e0e0e0;
-  border: 1px solid #bbb;
 
-  &:hover {
-    opacity: 0.65;
-    cursor: pointer;
-  }
+#SearchBox {
+  margin-right: 0;
+}
 
-  &:active {
-    opacity: 1;
-    background: #aaa;
-  }
+#SearchBoxPanel {
+  border: 0;
+  border-radius: 0;
 }
 
 // max-width: 1100px;
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1200px) {
 
-  .SlimHeader #Header.slimheader_darken {
-    a:link,
-    a:visited,
-    a:active {
-      color: #565656;
-    }
+  #HeaderResponsive #HeaderButtons a {
+    border: 0;
+    background: #ffffff;
+    background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed));
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+    background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+    background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+    background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+  }
+
+  #UICenter #Header.slimheader_darken .HorizontalNav ul li a {
+    border: 1px solid #dedede;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 2.5em;
+    line-height: 2.5em;
+    margin-bottom: 0;
+    margin-top: 10px;
+    background: none;
+    color: white;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  // fix padding size
+  #UICenter #Header {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
+
+  #UICenter #HeaderNav1 {
+    text-align: center;
+  }
+  #UICenter #HeaderNav2 {
+    text-align: center
+  }
+
+  #UICenter #HeaderNav1,
+  #UICenter #HeaderNav1 ul,
+  #UICenter #HeaderNav2,
+  #UICenter #Headernav2 ul {
+    padding: 0;
+  }
+}
+
+
+// min-width: 1100px;
+@media only screen and (min-width: 1100px) {
+  #SearchBox {
+    // fixed scrolling on wide window
+
+    position: fixed;
+    top: 0;
+    bottom: -50px;
+    right: -25px;
+    z-index: 10;
+    background: #eee;
+  }
+
+  #SearchBoxPanel {
+    padding-top: 54px;
   }
 }
 
@@ -85,28 +131,15 @@
     left: 0;
     right: 0;
   }
-
-  #SearchBox {
-    // fixed scrolling on wide window
-    margin-right: 0;
-    position: fixed;
-    top: 0;
-    bottom: -50px;
-    right: -25px;
-    z-index: 10;
-    background: #eee;
-  }
-
-  #SearchBoxPanel {
-    padding-top: 54px;
-    border: 0;
-    border-radius: 0;
-  }
 }
 
 //
 // search.php
 //
+
+.TopInpageNav {
+  border-bottom: 0;
+}
 
 // ResourcePanelShells
 .ResourcePanelShellLarge,
@@ -139,10 +172,10 @@
   }
 
   // hide them
-  //.ResourcePanelInfo,
-  //.clear {
-  //  display: none;
-  //}
+  .ResourcePanelInfo,
+  .clear {
+    display: none;
+  }
 }
 
 // add height for better layout
