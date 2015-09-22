@@ -14,7 +14,7 @@ gulp.task 'scss', ->
   ).on('error', sass.logError)
   .pipe gulp.dest './css'
 
-gulp.task 'make', ->
+gulp.task 'make', ['scss'], ->
   console.log 'Creating rsp package...'
   gulp.src [
     './**/*'
