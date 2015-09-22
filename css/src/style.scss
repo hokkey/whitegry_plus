@@ -1,69 +1,84 @@
+// whitegry_plus
+// an advanced theme based on whitegry
+//
+// Author: Hori Yuma
+//
+// import base theme
+//
 @import 'original';
 
+//
+// common part
+//
 
-/* common */
-.HomePanelIN {
-  border: 0 !important;
-}
 #Header {
-  border-bottom: 0 !important;
+  border-bottom: 0;
 }
+
 #UICenter {
+  // enable smooth scrolling for iOS
   -webkit-overflow-scrolling: touch;
 }
+
+.HomePanelIN,
 .ImageBorder,
 .RecordPanel,
 .Picture,
 .VideoBorder {
-  border: 0 !important;
+  // remove borders
+  border: 0;
 }
-/* common button override */
-@media only screen and (max-width: 1100px) {
-  .SlimHeader #Header.slimheader_darken a:link,
-  .SlimHeader #Header.slimheader_darken a:visited,
-  .SlimHeader #Header.slimheader_darken a:active {
-    color: #565656 !important;
-  }
+
+.ResponsiveButton {
+  // override button design
+  height: 38px;
+  line-height: 38px;
+  position: relative;
+  top: 4px;
 }
+
 #HeaderButtons a:link,
 #UICenter input[type=submit],
 #UICenter input[type=button],
 #UICenter button,
 .ResponsiveButton {
-  box-shadow: none !important;
+  // override button design
+  box-shadow: none;
   border-radius: 8px;
-  background: #e0e0e0 !important;
-  border: 1px solid #bbb !important;
-}
-.ResponsiveButton {
-  height: 38px !important;
-  line-height: 38px !important;
-  position: relative;
-  top: 4px;
+  background: #e0e0e0;
+  border: 1px solid #bbb;
+
+  &:hover {
+    opacity: 0.65;
+    cursor: pointer;
+  }
+
+  &:active {
+    opacity: 1;
+    background: #aaa;
+  }
 }
 
-#HeaderButtons a:hover,
-#UICenter input[type=submit]:hover,
-#UICenter input[type=button]:hover,
-#UICenter button:hover,
-.ResponsiveButton:hover {
-  opacity: 0.65;
-  cursor: pointer;
-}
-#HeaderButtons a:active,
-#UICenter input[type=submit]:active,
-#UICenter input[type=button]:active,
-#UICenter button:active,
-.ResponsiveButton:active {
-  opacity: 1;
-  background: #aaa;
+// max-width: 1100px;
+@media only screen and (max-width: 1100px) {
+
+  .SlimHeader #Header.slimheader_darken {
+    a:link,
+    a:visited,
+    a:active {
+      color: #565656;
+    }
+  }
 }
 
+// min-width: 1200px;
 @media only screen and (min-width: 1200px) {
-  .SlimHeader #SearchBarContainer {
+
+  #SearchBarContainer {
     padding-top: 35px;
   }
-  .SlimHeader #Header {
+
+  #Header {
     position: fixed;
     z-index: 11;
     top: 0;
@@ -71,8 +86,8 @@
     right: 0;
   }
 
-  /* simple search */
-  .SlimHeader #SearchBox {
+  #SearchBox {
+    // fixed scrolling on wide window
     margin-right: 0;
     position: fixed;
     top: 0;
@@ -82,115 +97,127 @@
     background: #eee;
   }
 
-  .SlimHeader #SearchBoxPanel {
+  #SearchBoxPanel {
     padding-top: 54px;
-    border: 0 !important;
-    border-radius: 0 !important;
+    border: 0;
+    border-radius: 0;
   }
 }
-/* search.php */
+
+//
+// search.php
+//
+
+// ResourcePanelShells
 .ResourcePanelShellLarge,
 .ResourcePanelShell,
 .ResourcePanelShellSmall {
-  margin: 0 !important;
-  margin-right: -1px !important;
-  margin-bottom: -1px !important;
-  padding: 0 !important;
+  margin: 0;
+  margin-right: -1px;
+  margin-bottom: -1px;
+  padding: 0;
   background: white;
-  border: 1px solid #ddd !important;
+  border: 1px solid #ddd;
   cursor: pointer;
   box-sizing: border-box;
-  -webkit-transition: border 500ms cubic-bezier(0.145, 0.005, 0.160, 1); /* older webkit */
+
+  // animation settings
+  -webkit-transition: border 500ms cubic-bezier(0.145, 0.005, 0.160, 1);
   -webkit-transition: border 500ms cubic-bezier(0.145, 0.005, 0.160, 1.585);
   -moz-transition: border 500ms cubic-bezier(0.145, 0.005, 0.160, 1.585);
   -o-transition: border 500ms cubic-bezier(0.145, 0.005, 0.160, 1.585);
-  transition: border 500ms cubic-bezier(0.145, 0.005, 0.160, 1.585); /* custom */
+  transition: border 500ms cubic-bezier(0.145, 0.005, 0.160, 1.585);
 
-  -webkit-transition-timing-function: cubic-bezier(0.145, 0.005, 0.160, 1); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.145, 0.005, 0.160, 1);
   -webkit-transition-timing-function: cubic-bezier(0.145, 0.005, 0.160, 1.585);
   -moz-transition-timing-function: cubic-bezier(0.145, 0.005, 0.160, 1.585);
   -o-transition-timing-function: cubic-bezier(0.145, 0.005, 0.160, 1.585);
-  transition-timing-function: cubic-bezier(0.145, 0.005, 0.160, 1.585); /* custom */
+  transition-timing-function: cubic-bezier(0.145, 0.005, 0.160, 1.585);
+
+  &:hover {
+    border-bottom: 10px solid rgb(0, 180, 0);
+  }
+
+  // hide them
+  //.ResourcePanelInfo,
+  //.clear {
+  //  display: none;
+  //}
 }
-.ResourcePanelShellLarge:hover,
-.ResourcePanelShell:hover,
-.ResourcePanelShellSmall:hover {
-  /*border-top: 8px solid rgb(200, 0, 0) !important;*/
-  border-bottom: 10px solid rgb(0, 180, 0) !important;
-}
+
+// add height for better layout
 .ResourcePanelShellLarge {
-  height: 440px !important;
+  height: 440px;
 }
+
 .ResourcePanelShell {
-  height: 240px !important;
+  height: 240px;
 }
+
 .ResourcePanelShellSmall {
-  height: 155px !important;
+  height: 155px;
 }
-.ResourcePanelShellLarge .ResourcePanelInfo,
-.ResourcePanelShellLarge .clear,
-.ResourcePanelShell .ResourcePanelInfo,
-.ResourcePanelShell .clear,
-.ResourcePanelShellSmall .ResourcePanelInfo,
-.ResourcePanelShellSmall .clear {
-  display: none;
-}
+
 .ResourcePanelLarge,
 .ResourcePanel,
 .ResourcePanelSmall {
-  padding: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
+
 .ResourcePanelInfo {
-  font-size: 0.7em !important;
+  font-size: 0.7em;
 }
-/* view.php */
-/*
-#previewimagewrapper img {
-  width: 50%;
-}*/
+
+//
+// view.php
+//
+
 .RecordPanel {
-  background: none !important;
-  border: 0 !important;
-  padding: 0 !important;
+  background: none;
+  border: 0;
+  padding: 0;
 }
+
 #previewimage {
-  max-width: 460px; !important;
-}
-@media only screen and (min-width: 1460px) {
-  #previewimage {
-    max-width: 650px; !important;
+  // set max-width for large thumbnails
+  max-width: 460px;
+
+  // large max-width on large screen
+  @media only screen and (min-width: 1460px) {
+    max-width: 650px;
+  }
+  @media only screen and (min-width: 1700px) {
+    max-width: 850px;
   }
 }
-@media only screen and (min-width: 1700px) {
-  #previewimage {
-    max-width: 850px; !important;
-  }
-}
+
 .RecordDownload {
-  border: 0 !important;
-  border-radius: 0 !important;
+  border: 0;
+  border-radius: 0;
 }
 
+// fix for lightbox plugin
 #lightbox-image {
-  max-height: 800px !important;
+  max-height: 800px;
 }
 
-/* Infobox */
 #InfoBox {
-  background: transparent !important;
+  background: transparent;
   z-index: 10;
 }
+
 #InfoBoxInner {
-  margin-top: 20px !important;
-  margin-bottom: 20px !important;
-  background: rgb(0, 180, 0) !important;
-  padding: 10px !important;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: rgb(0, 180, 0);
+  padding: 10px;
   border-radius: 8px;
   font-size: 0.8em;
-  max-height: 8em !important;
+  max-height: 8em;
 }
+
 #InfoBoxInner > * {
-  color: white !important;
+  color: white;
 }
