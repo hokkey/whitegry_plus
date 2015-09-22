@@ -1,15 +1,44 @@
 README
 =========
 
-# What is this?
+## What is this?
+
+A customized whitegry theme for ResourceSpace.
 
 * good-looking on search result page
-* smooth scrolling on iOS
+* smooth touch scrolling on iOS
 * fix please button style on official responsive plugin
 
-# Installation
+## Screenshot
 
-# License
+
+
+## Compatibility
+
+Tested on ResourceSpace Revision 7009, MacOSX 10.10.5
+
+## Installation
+
+1. Download this project
+2. Unpack archive on resourcespace/plugins
+3. Login and open team center > manage plugins
+4. Expand 'User Interface' section then click 'whitegry_plus > Activate'
+4. Expand 'Enterprise' section then click 'responsive > Activate'
+5. (Optional) Set recommended configs into your config.php file, see below.
+
+### Recommended Configs
+
+```
+$infobox=true;
+$infobox_display_resource_icon=false;
+$user_rating=true;
+$checkbox_and=true;
+$display_resource_id_in_thumbnail=true;
+$image_preview_zoom=true;
+
+```
+
+## License
 
 The MIT License (MIT)
 
