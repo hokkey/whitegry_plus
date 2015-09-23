@@ -57,3 +57,8 @@ $image_preview_zoom=true;
 ## License
 
 MIT License
+
+## More Info
+
+日本語になりますが、QiitaへResourceSpace絡みの記事をまとめています。
+[オープンソースのDAMシステム、ResourceSpaceのまとめ - Qiita](http://qiita.com/y_hokkey/items/20336a3adc8672a41a4f)
