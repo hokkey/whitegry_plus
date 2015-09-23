@@ -1,78 +1,59 @@
-README
+col-whitegry_plus
 =========
 
-## What is this?
+## Introduction
 
-A customized whitegry theme for ResourceSpace.
+col-whitegry_plus is a CSS theme for ResourceSpace, based on col-whitegry.
+This theme mods some unsophisticated issues of default theme.
 
-* good-looking on search result page
+* good-looking search result page
 * smooth touch scrolling on iOS
-* fix please button style on official responsive plugin
+* replacing poor button styles when responsive plugin enabled
 
 ## Screenshot
 
+![screenshot](doc/screen.png)
+![comparison](doc/comparison.png)
 
+## Requirement
 
-## Compatibility
-
-Tested on ResourceSpace Revision 7009, MacOSX 10.10.5
+* ResourceSpace Revision 7009
+* MacOSX 10.10.5/iOS 9
 
 ## Installation
 
-1. Download this project
-2. Unpack archive on resourcespace/plugins
-3. Login and open team center > manage plugins
-4. Expand 'User Interface' section then click 'whitegry_plus > Activate'
-4. Expand 'Enterprise' section then click 'responsive > Activate'
-5. (Optional) Set recommended configs into your config.php file, see below.
+1. Download the theme to `resourcespace/plugins`
+2. Login as administrator and go to Team center > Manage plugins'
+3. Expand 'Enterprise' section and activate 'rse_responsive'
+4. Expand 'User Interface' section and activate 'col-whitegry_plus'
+5. (Optional) Set recommended configs into your `config.php` file
 
 ### Recommended Configs
-
-```
+```php
+# Enable AJAX popup info box on search results.
 $infobox=true;
+# Display a small resource file type icon in the info box?
 $infobox_display_resource_icon=false;
-$user_rating=true;
-$checkbox_and=true;
-$display_resource_id_in_thumbnail=true;
-$image_preview_zoom=true;
+# An alternative mode for the InfoBox, that displays the preview image instead of any metadata.
+$infobox_image_mode=false;
 
+# Enable user rating of resources
+# Users can rate resources using a star ratings system on the resource view page.
+# Average ratings are automatically calculated and used for the 'popularity' search ordering.
+$user_rating=false;
+# Display User Rating Stars in search views (a popularity column in list view)
+$display_user_rating_stars=true;
+
+# Use checkboxes for selecting resources
+$use_checkboxes_for_selection=true;
+
+# Option to show resource ID in the thumbnail, next to the action icons.
+$display_resource_id_in_thumbnail=true;
+
+# Image preview zoom using jQuery.zoom (hover over the preview image to zoom in on the resource view page)
+$image_preview_zoom=true;
 ```
 
 ## License
 
-The MIT License (MIT)
-
-Copyright (c) 2015 Yuma Hori
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
----
-
-An original whitegry theme is distributed under a BSD-style License.
-
-
-Copyright Oxfam GB, Montala, WWF International, Tom Gleason, David Dwiggins, Historic New England, Colorhythm LLC, Worldcolor, Henrik Frizén 2006-2014
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-	+	Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-	+	Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-	+	Neither the names of any of the copyright holders listed above nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+MIT License

@@ -1,8 +1,8 @@
 name: col-whitegry_plus
 author: Yuma Hori
 version: 1.0
-desc: A more comfortable theme based on default whitegray
-info_url: https://github.com/hokkey
+desc: Customized CSS theme for ResourceSpace with res_responsive plugin
+info_url: https://github.com/hokkey/col-whitegry_plus
 config_url: /plugins/col-whitegry_plus/pages/setup.php
 default_priority: 999
 category: User interface
