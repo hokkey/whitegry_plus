@@ -164,6 +164,11 @@ $SearchBoxWidth: 282px;
   margin-top: -1em !important;
 }
 
+// rating star background image
+.StarCurrent {
+  background: transparent url('../../gfx/whitegry_plus/interface/RatingStarGreen.gif') no-repeat;
+}
+
 // fix responsive style for global nav buttons
 @media only screen and (max-width: 1200px) {
 
