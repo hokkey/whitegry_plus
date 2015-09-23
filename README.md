@@ -23,10 +23,10 @@ This theme mods some unsophisticated issues of default theme.
 ## Installation
 
 1. Download the theme to `resourcespace/plugins`
-2. Login as administrator and go to Team center > Manage plugins'
-3. Expand 'Enterprise' section and activate 'rse_responsive'
-4. Expand 'User Interface' section and activate 'col-whitegry_plus'
-5. (Optional) Set recommended configs into your `config.php` file
+2. Login as administrator and go to Team center > Manage plugins
+3. Expand "Enterprise" section and activate rse_responsive
+4. Expand "User Interface" section and activate col-whitegry_plus
+5. (Optional) Set recommended configs to your `resourcespace/include/config.php` file
 
 ### Recommended Configs
 ```php
