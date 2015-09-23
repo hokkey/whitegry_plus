@@ -149,6 +149,16 @@ $SearchBoxWidth: 282px;
   }
 }
 
+// CollectionDiv widget
+#CollectionDiv {
+
+  // drop down menu style
+  select {
+    background-color: inherit;
+    color: inherit;
+  }
+}
+
 // listview on theme page
 .RecordHeader + .Listview {
   margin-top: -1em !important;
@@ -267,6 +277,14 @@ $SearchBoxWidth: 282px;
   .clear {
     display: none;
   }
+
+  // do not hide icons in mobile devices
+  .ResourcePanelIcons {
+    @media only screen and (max-width: 1100px) {
+      display: inherit;
+    }
+  }
+
 }
 
 // add height for better layout
@@ -307,6 +325,7 @@ $SearchBoxWidth: 282px;
 .ResourcePanelInfo {
   font-size: 0.7em;
 }
+
 
 //
 // view.php
