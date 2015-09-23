@@ -17,8 +17,8 @@ This theme mods some unsophisticated issues of default theme.
 
 ## Requirement
 
-* ResourceSpace Revision 7009
-* MacOSX 10.10.5/iOS 9
+* ResourceSpace Revision 7009 or later
+* rse_responsive plugin
 
 ## Installation
 
