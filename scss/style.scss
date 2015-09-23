@@ -78,7 +78,8 @@ $SearchBoxWidth: 282px;
 }
 
 // Main area
-#UICenter #CentralSpaceContainer {
+#UICenter #CentralSpaceContainer,
+#UICenter #HomePanelContainer {
 
   // do not float by Simple search pane
   @media only screen and (min-width: 1100px) and (max-width: 1200px) {
@@ -86,9 +87,18 @@ $SearchBoxWidth: 282px;
   }
 }
 
+#UICenter #HomePanelContainer {
+  @media only screen and (min-width: 1100px) and (max-width: 1200px) {
+    float: none;
+    width: auto;
+  }
+}
+
 // Simple search
 #SearchBox {
   margin-right: 0;
+  position: relative;
+  z-index: 10;
 
   // fixed scrolling when window is wide enough
   @media only screen and (min-width: 1200px) {
@@ -96,7 +106,6 @@ $SearchBoxWidth: 282px;
     top: 0;
     bottom: -50px;
     right: 0;
-    z-index: 10;
     background: #eee;
   }
 }
@@ -154,8 +163,8 @@ $SearchBoxWidth: 282px;
 
   // drop down menu style
   select {
-    background-color: inherit;
-    color: inherit;
+    background-color: white !important;
+    color: black !important;
   }
 }
 
