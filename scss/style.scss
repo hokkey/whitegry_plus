@@ -11,21 +11,21 @@
 // common part
 //
 
+// modal resource page window
 #UICenter #modal {
   box-shadow: none;
   -webkit-overflow-scrolling: touch;
 }
 
-#Header {
-  border-bottom: 0;
-}
-
+// main area wrapper
 #UICenter {
   // enable smooth scrolling for iOS
   -webkit-overflow-scrolling: touch;
   background: #eee;
 }
 
+// remove borders
+#Header,
 #Footer,
 .CollectImageBorder,
 .HomePanelIN,
@@ -33,7 +33,6 @@
 .RecordPanel,
 .Picture,
 .VideoBorder {
-  // remove borders
   border: 0;
 }
 
@@ -47,13 +46,13 @@
   box-shadow: none;
   background: #ffffff;
   background: #ffffff;
-  background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed));
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
-  background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
-  background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
-  background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+  background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(47%, #f6f6f6), color-stop(100%, #ededed));
+  background: -webkit-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+  background: -o-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0);
 
   &:hover {
     cursor: pointer;
@@ -65,17 +64,54 @@
   }
 }
 
+$SearchBoxWidth: 282px;
 
+// header
+#Header {
+  @media only screen and (min-width: 1200px) {
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+// Main area
+#UICenter #CentralSpaceContainer {
+
+  // do not float by Simple search pane
+  @media only screen and (min-width: 1100px) and (max-width: 1200px) {
+    margin-right: $SearchBoxWidth;
+  }
+}
+
+// Simple search
 #SearchBox {
   margin-right: 0;
+
+  // fixed scrolling when window is wide enough
+  @media only screen and (min-width: 1200px) {
+    position: fixed;
+    top: 0;
+    bottom: -50px;
+    right: 0;
+    z-index: 10;
+    background: #eee;
+  }
 }
 
 #SearchBoxPanel {
   border: 0;
   border-radius: 0;
+
+  // fixed scrolling when window is wide enough
+  @media only screen and (min-width: 1200px) {
+    padding-top: 54px;
+  }
 }
 
-// search input
+// Simple search input
 #ssearchbox {
   height: 30px;
   line-height: 30px;
@@ -84,12 +120,26 @@
   border-radius: 16px;
 }
 
+#SearchBarContainer {
+  @media only screen and (min-width: 1200px) {
+    padding-top: 35px;
+  }
+}
 
+// Footer
+#Footer {
+  @media only screen and (min-width: 1200px) {
+    margin-right: $SearchBoxWidth;
+  }
+}
+
+// BasicBox widget
 .BasicsBox {
   padding: 10px;
   margin-top: 10px;
 }
 
+// Listview widget
 .Listview {
   background: white;
   padding: 10px;
@@ -99,33 +149,28 @@
   }
 }
 
+// listview on theme page
 .RecordHeader + .Listview {
   margin-top: -1em !important;
 }
 
-@media only screen and (min-width: 1100px) and (max-width: 1200px) {
-  #UICenter #CentralSpaceContainer {
-    margin-right: 282px;
-  }
-}
-
-// max-width: 1200px;
+// fix responsive style for global nav buttons
 @media only screen and (max-width: 1200px) {
 
-  // global navigation
+  // global navigation buttons
   #HeaderResponsive #HeaderButtons a {
     border: 0;
     background: #ffffff;
-    background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed));
-    background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
-    background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
-    background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
-    background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+    background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(47%, #f6f6f6), color-stop(100%, #ededed));
+    background: -webkit-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+    background: -o-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed', GradientType=0);
   }
 
-  // global navigation 2
+  // global navigation 2 buttons
   #UICenter #Header.slimheader_darken .HorizontalNav ul li a {
     border: 1px solid #dedede;
     padding-left: 10px;
@@ -160,9 +205,7 @@
     padding-bottom: 10px;
   }
 
-  #UICenter #HeaderNav1 {
-    text-align: center;
-  }
+  #UICenter #HeaderNav1,
   #UICenter #HeaderNav2 {
     text-align: center
   }
@@ -175,39 +218,6 @@
   }
 }
 
-
-// min-width: 1200px;
-@media only screen and (min-width: 1200px) {
-  #SearchBox {
-    // fixed scrolling on wide window
-    position: fixed;
-    top: 0;
-    bottom: -50px;
-    right: 0;
-    z-index: 10;
-    background: #eee;
-  }
-
-  #SearchBoxPanel {
-    padding-top: 54px;
-  }
-
-  #Footer {
-    margin-right: 280px;
-  }
-
-  #SearchBarContainer {
-    padding-top: 35px;
-  }
-
-  #Header {
-    position: fixed;
-    z-index: 11;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-}
 
 //
 // search.php
@@ -273,10 +283,10 @@
 
   // fix width of rating stars
   .RatingStars a {
-      display: inline-block;
-      width: 0.75em;
-      position: relative;
-      right: 0.25em;
+    display: inline-block;
+    width: 0.75em;
+    position: relative;
+    right: 0.25em;
   }
 
   // hide ID text and align icons to center
