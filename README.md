@@ -4,7 +4,7 @@ col-whitegry_plus
 ## Introduction
 
 col-whitegry_plus is a CSS theme for [ResourceSpace](http://www.resourcespace.org), based on col-whitegry.
-This theme mods some unsophisticated issues of default theme.
+This theme modifies some unsophisticated issues of default theme.
 
 * good-looking search result page
 * smooth touch scrolling on iOS
