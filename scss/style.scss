@@ -299,6 +299,18 @@ $SearchBoxWidth: 282px;
 
 .ResourcePanelShell {
   height: 240px;
+
+  // cancel useless mobile styles
+  .SlimHeader & {
+    width: 174px;
+    padding: inherit;
+    float: left;
+    display: inherit;
+    margin: 0;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    text-align: inherit;
+  }
 }
 
 .ResourcePanelShellSmall {
