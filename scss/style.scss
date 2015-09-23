@@ -270,6 +270,20 @@
 
 .ResourcePanelShellSmall {
   height: 155px;
+
+  // fix width of rating stars
+  .RatingStars a {
+      display: inline-block;
+      width: 0.75em;
+      position: relative;
+      right: 0.25em;
+  }
+
+  // hide ID text and align icons to center
+  .ResourcePanelIcons {
+    font-size: 0;
+    text-align: center;
+  }
 }
 
 .ResourcePanelLarge,
