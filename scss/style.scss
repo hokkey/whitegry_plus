@@ -11,6 +11,11 @@
 // common part
 //
 
+#UICenter #modal {
+  box-shadow: none;
+  -webkit-overflow-scrolling: touch;
+}
+
 #Header {
   border-bottom: 0;
 }
@@ -18,8 +23,11 @@
 #UICenter {
   // enable smooth scrolling for iOS
   -webkit-overflow-scrolling: touch;
+  background: #eee;
 }
 
+#Footer,
+.CollectImageBorder,
 .HomePanelIN,
 .ImageBorder,
 .RecordPanel,
@@ -29,50 +37,164 @@
   border: 0;
 }
 
-.ResponsiveButton {
-  // override button design
-  height: 38px;
-  line-height: 38px;
-  position: relative;
-  top: 4px;
-}
-
-#HeaderButtons a:link,
-#UICenter input[type=submit],
+// general button style
 #UICenter input[type=button],
+#UICenter input[type=submit],
 #UICenter button,
-.ResponsiveButton {
-  // override button design
-  box-shadow: none;
+#UICenter .ResponsiveButton {
+  border: 1px solid #dedede;
   border-radius: 8px;
-  background: #e0e0e0;
-  border: 1px solid #bbb;
+  box-shadow: none;
+  background: #ffffff;
+  background: #ffffff;
+  background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed));
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+  background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+  background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+  background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
 
   &:hover {
-    opacity: 0.65;
     cursor: pointer;
+    opacity: 0.7;
   }
 
   &:active {
     opacity: 1;
-    background: #aaa;
   }
 }
 
-// max-width: 1100px;
-@media only screen and (max-width: 1100px) {
 
-  .SlimHeader #Header.slimheader_darken {
-    a:link,
-    a:visited,
-    a:active {
-      color: #565656;
-    }
+#SearchBox {
+  margin-right: 0;
+}
+
+#SearchBoxPanel {
+  border: 0;
+  border-radius: 0;
+}
+
+// search input
+#ssearchbox {
+  height: 30px;
+  line-height: 30px;
+  padding: 4px 10px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+}
+
+
+.BasicsBox {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.Listview {
+  background: white;
+  padding: 10px;
+
+  td {
+    border-right: 1px solid #eee;
   }
 }
+
+.RecordHeader + .Listview {
+  margin-top: -1em !important;
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1200px) {
+  #UICenter #CentralSpaceContainer {
+    margin-right: 282px;
+  }
+}
+
+// max-width: 1200px;
+@media only screen and (max-width: 1200px) {
+
+  // global navigation
+  #HeaderResponsive #HeaderButtons a {
+    border: 0;
+    background: #ffffff;
+    background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed));
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+    background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+    background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+    background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+  }
+
+  // global navigation 2
+  #UICenter #Header.slimheader_darken .HorizontalNav ul li a {
+    border: 1px solid #dedede;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 2.5em;
+    line-height: 2.5em;
+    margin-bottom: 0;
+    margin-top: 10px;
+    background: none;
+    color: white;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  // search input in small size
+  #UICenter #SearchBarContainer {
+    width: auto;
+    margin: 0;
+  }
+
+  #UICenter #CentralSpaceContainer {
+    width: auto;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  // fix padding size
+  #UICenter #Header {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
+
+  #UICenter #HeaderNav1 {
+    text-align: center;
+  }
+  #UICenter #HeaderNav2 {
+    text-align: center
+  }
+
+  #UICenter #HeaderNav1,
+  #UICenter #HeaderNav1 ul,
+  #UICenter #HeaderNav2,
+  #UICenter #Headernav2 ul {
+    padding: 0;
+  }
+}
+
 
 // min-width: 1200px;
 @media only screen and (min-width: 1200px) {
+  #SearchBox {
+    // fixed scrolling on wide window
+    position: fixed;
+    top: 0;
+    bottom: -50px;
+    right: 0;
+    z-index: 10;
+    background: #eee;
+  }
+
+  #SearchBoxPanel {
+    padding-top: 54px;
+  }
+
+  #Footer {
+    margin-right: 280px;
+  }
 
   #SearchBarContainer {
     padding-top: 35px;
@@ -85,28 +207,20 @@
     left: 0;
     right: 0;
   }
-
-  #SearchBox {
-    // fixed scrolling on wide window
-    margin-right: 0;
-    position: fixed;
-    top: 0;
-    bottom: -50px;
-    right: -25px;
-    z-index: 10;
-    background: #eee;
-  }
-
-  #SearchBoxPanel {
-    padding-top: 54px;
-    border: 0;
-    border-radius: 0;
-  }
 }
 
 //
 // search.php
 //
+
+// hide keys
+.BottomInpageKey {
+  display: none;
+}
+
+.TopInpageNav {
+  border-bottom: 0;
+}
 
 // ResourcePanelShells
 .ResourcePanelShellLarge,
@@ -139,10 +253,10 @@
   }
 
   // hide them
-  //.ResourcePanelInfo,
-  //.clear {
-  //  display: none;
-  //}
+  .ResourcePanelInfo,
+  .clear {
+    display: none;
+  }
 }
 
 // add height for better layout
@@ -174,10 +288,10 @@
 // view.php
 //
 
-.RecordPanel {
-  background: none;
+#UICenter .RecordPanel {
+  background: white;
   border: 0;
-  padding: 0;
+  padding: 10px;
 }
 
 #previewimage {
@@ -204,20 +318,31 @@
 }
 
 #InfoBox {
-  background: transparent;
-  z-index: 10;
+  background: transparent !important;
+  z-index: 10 !important;
 }
 
 #InfoBoxInner {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background: rgb(0, 180, 0);
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 0.8em;
-  max-height: 8em;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  background: rgb(0, 180, 0) !important;
+  padding: 10px !important;
+  border-radius: 8px !important;
+  font-size: 0.8em !important;
+  max-height: 8em !important;
 }
 
 #InfoBoxInner > * {
-  color: white;
+  color: white !important;
+}
+
+// jquery overlay
+
+// fix overlay order
+#jquery-overlay {
+  z-index: 200 !important;
+}
+
+#jquery-lightbox {
+  z-index: 201 !important;
 }
